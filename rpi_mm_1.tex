@@ -51,10 +51,10 @@
 \newcommand{\tabreff}[2]{Tables~\ref{tab:#1} and \ref{tab:#2}}
 \newcommand{\tabrefff}[3]{Tables~\ref{tab:#1}, \ref{tab:#2} and \ref{tab:#3}}
 
-\def\year{2024--2025}
-\title{EITA65 Design of Systems for Digital Transformation\\\year}
+\def\year{2025--2026}
+\title{EITA66 Design of Systems for Digital Transformation\\\year}
 %\title{EITA65 Digitalisering -- realisering och systemdesign med användarperspektiv\\\year}
-\author{\huge The Raspberry Pi\\Raspberry Pi Project -- Part 1}
+\author{{\huge The Raspberry Pi}\\\\Raspberry Pi Project -- Part 1}
 %\\Version \DTMnow}
 \date{}
 
@@ -64,8 +64,8 @@
 \thispagestyle{empty}% to remove page numbering on first page
 
 \begin{itemize}
-\item This project will be done individually, but you will work \textit{together} in groups of 3 or 4.
-\item You will not get detailed step-by-step instructions. Figuring out how to reach the goal is part of the project. (being a collaborative doer)
+\item \includegraphics[width=3mm]{person.png} This project will be done individually, but you will work \textit{together} in groups of 3 or 4.
+\item You will not receive detailed step-by-step instructions. Figuring out how to reach the goal is part of the project (being a collaborative doer).
 \item The results of this project part will be used in the next, so document your work.
 \end{itemize}
 
@@ -119,7 +119,7 @@
 
 
 \section{Introduction}
-In this project part you will get acquainted with a Raspberry Pi 4. 
+In this project part, you will get acquainted with a Raspberry Pi 4. 
 In the first part you will
 \begin{itemize}
 \item[1.] Unpack your Pi
@@ -128,7 +128,7 @@ In the first part you will
 \item[4.] Update, upgrade and install software on your Pi
 \end{itemize}
 
-\noindent You will need some things before getting started
+\noindent You will need some things before starting out
 \begin{itemize}
     \item A computer
     \item A SD-card reader (often built into a laptop)
@@ -140,7 +140,7 @@ In the first part you will
 
 
 \section{What is a Raspberry Pi?}
-A Raspberry Pi is a small computer that is built on a single circuit board. A Raspberry Pi has everything (well almost) that other computers have; a processor, memory and USB, ethernet and HDMI input/output sockets. Read more about your model (Raspberry Pi 4) on {\color{blue}\href{https://www.raspberrypi.org/products/raspberry-pi-4-model-b/}{Raspberry Pis official website}}.
+A Raspberry Pi is a small computer that is built on a single circuit board. A Raspberry Pi has everything (well almost) that other computers have; a processor, memory as well as USB, ethernet, and HDMI input/output sockets. Read more about your model (Raspberry Pi 4) on {\color{blue}\href{https://www.raspberrypi.org/products/raspberry-pi-4-model-b/}{Raspberry Pis official website (\texttt{https://www.raspberrypi.com/products/raspberry-pi-4-model-b/})}}.
 \begin{center}
 \includegraphics[width=100mm]{rpi4_top_view_no_bg.png}
 \end{center}
@@ -155,82 +155,90 @@ The lab kit consists of the Raspberry Pi 4 KIT and the Raspberry Pi SENSE HAT.
 \end{center}
 
 \section{Unboxing the Raspberry Pi}
-Your Raspberry Pi 4 KIT contains not only the actual Raspberry Pi, but also a case and a power supply for your Pi, a 16GB SD-card and a HDMI-cable.
+Your Raspberry Pi 4 KIT contains not only the actual Raspberry Pi, but also a case and a power supply for your Pi, a 16GB or 32 GB SD card and an HDMI cable.
 
 \section{Setting up the OS}
 The operating system (OS) is the software that binds everything in a computer together. It connects the USB-socket with software that wants to utilise it, e.g. software for a keyboard. Generally speaking an OS connects hardware with software/applications that the user interacts with \cite{OS}. The most common OS is Microsoft Windows, but the one we are going to use is called \emph{Raspberry Pi OS}. Raspberry Pi OS (PiOS from now on) is, as the name implies, specifically developed for a Raspberry Pi. PiOS is based on \emph{Debian}, and Debian in itself has a Linux-kernel. Now - to work! 
 
 \begin{itemize}
-\item[1.] You need to install the latest version of PiOS, and to do that you need a computer with an SD-card reader or an adapter with a SD-card reader. If you don't have one probably you have a friend who does.
-\item[2.] Go to  {\color{blue}\href{https://www.raspberrypi.org/software/}{this website}} and download the Raspberry Pi Imager that suits your OS. Most of you are going to choose \emph{Download for Windows} since we all learned that Windows is the most common OS.
-\item[3.] Install the file that was downloaded and follow the steps in {\color{blue}\href{https://www.youtube.com/watch?v=ntaXWS8Lk34}{this video}} to install the OS on your SD-card. Choose to install Raspberry Pi OS (64-bit). If you have any problems you can look at {\color{blue}\href{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/2}{this website}} for more detailed information.
+
+\item[1.] You need to install the latest version of PiOS, and to do that you need a computer with an SD card reader or an adapter with an SD card reader. If you don't have one probably you have a friend who does.
+
+\item[2.] Go to  {\color{blue}\href{https://www.raspberrypi.org/software/}{this website (\texttt{https://www.raspberrypi.com/software/})}} and download the Raspberry Pi Imager that suits your OS. Most of you are going to choose \emph{Download for Windows} since we all learned that Windows is the most common OS, but there are also versions for MacOS and Linux.
+
+\item[3.] Install the file that was downloaded and start the Raspberry Pi Imager application.
+
+\item[4.] Insert your SD card into your computer SD card slot.
+
+\item[5.] Under ''Raspberry Pi Device'' choose ''RaspBerry Pi 4'', under ''Operating System'' choose ''Raspberry Pi OS (64-bit)'' and finally, under ''Storage'' choose your newly inserted SD card. Then click on ''NEXT''.
+
+\item[6.] At this point you can choose to preconfigure your new operating system. If you choose not to, click ''NO''. You will then be asked to configure the operating system when you start it for the first time. You will find instructions for how to do this below. If, on the other hand, you do decide to preconfigure the operating system do like this:
+\begin{itemize}
+\item[a) ] Click ''EDIT SETTINGS''.
+\item[b) ] Give your Raspberry a name (under ''Set hostname'').
+\item[c) ] Choose a username and password for your user.
+\item[d) ] If you are at home and have access to a WiFi network you can configure it now. Otherwise skip the ''Configure wireless LAN'' section. We will configure access to Eduroam later -- it cannot be done here.
+\item[e) ] Under ''Set locale settings'' choose ''Europe/Stockholm'' (time zone) and ''se'' (keyboard).
+\item[f) ] We also recommend that you enable SSH under the ''Services'' tab -- choose ''use password authentication'' -- and deselect ''Enable telemetry'' under the ''Options'' tab.
+\item[g) ] Finally click ''SAVE'' followed by ''YES''.
+\end{itemize}
+
 \item[4.] The installation might take a while \ldots
+
 \item[5.] When the installation is done, remove your SD-card from the computer. You are ready to start your Pi!
+
 \end{itemize}
   
 \section{Starting your Pi for the first time}
 Your are (almost) ready to start your Pi! You need some things before:
 \begin{itemize}
     \item A TV/monitor with a HDMI-socket (or an other socket that you have an HDMI-adapter for)
-    \item A USB-keyboard
-    \item A USB-mouse
+    \item A USB keyboard
+    \item A USB mouse
     \item A power outlet to power your Pi
 \end{itemize}
 Now you are ready to go!
-Follow {\color{blue}\href{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3}{this guide}} until you have reached the part where you need to restart you Pi. Restart it! You should now boot into the PiOS desktop. Follow the instructions on the screen to do an initial setup of your Raspberry Pi. Make sure to read the following notes carefully.\\*\\*
 
-{\bf Note 1: }\parbox[t]{14cm}{Be careful while choosing language in the initial setup. If you are using a Swedish keyboard we recommend you to choose Swedish in the language option so that the keyboard setup is Swedish while writing your password. Afterwards you switch the language to English, but keep the Swedish keyboard layout. Of course you can keep Swedish as your language, but it will be harder to search for instructions and help online since almost every guide and web-page about Raspberry Pi is in English. Look at the pictures below on how to change your languages settings (locale) after the initial setup. Also, do not forget to make sure your character set remains UTF-8.}
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{menu.png}
-        \caption{Go to the menu and find \emph{Raspberry Pi Configuration}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{lang1.png}
-        \caption{Go to the \emph{Localisation} tab and click on \emph{Set Locale}}
-    \end{subfigure}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{lang2.png}
-        \caption{Change to your language of preference. It is good to keep the UTF-8 as your Character Set}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{lang3.png}
-        \caption{Reboot your Pi}
-    \end{subfigure}
-\end{figure}
+Follow {\color{blue}\href{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3}{this guide (\texttt{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3})}} until you have reached the part where you need to restart you Pi. Restart it!
 
-\newpage
+Depending on whether you preconfigured your operating system or not you will either boot into the Raspberry Pi OS desktop or into the initial setup screens. If no extra setup is required, continue to the next section, ''Setting up Eduroam''. If you, on the other hand, see the initial setup screen complete the configuration like this:
 
-\noindent {\bf Note 2: }\parbox[t]{14cm}{You will need to connect your Pi to a network. Initially you wont be able to connect it to Eduroam or LU Guest, so please choose another network. Sharing a hotspot from your phone is a good idea. You can also try connecting using an ethernet cable directly to your router if possible. If so, skip WiFi setup for now.  Try to use internet to see if it works. If neither of these routes are available to you you can skip connecting to a network for now and then connect to Eduroam once the setup is finished. In such a case you will also need to skip software update during setup. You will find how to connect to Eduroam below.}
+\begin{itemize}
 
-\vspace{2mm}
+\item[1. ] Click ''Next''.
 
-\noindent {\bf Note 3: }\parbox[t]{14cm}{If you have managed to connect to a network you will be asked if you want to enable Raspberry Pi Connect. Raspberry Pi Connect is a service which will make it possible for you to work with your Raspberry Pi via a web browser on another computer without connecting a screen/keyboard/mouse. We will not use or talk about it during the course but you might find it useful anyway. You can read more about it on the {\color{blue}\href{https://www.raspberrypi.com/documentation/services/connect.html}{Raspberry Pi documentation web site}} and decide if you want to enable it (or perhaps do it later)}.
+\item[2. ] In the ''Set Country'' dialog enter:\\
+Country -- Sweden\\
+Language -- Swedish\\
+Timezone -- Stockholm\\
+Also check ''Use English language'' and finally click ''Next''.
 
+\item[3. ] Enter the user name and password you would like to have in the ''Create User'' dialog and click ''Next''.
+
+\item[4. ] If you are at home and have access to a WiFi network you can configure it in the next dialog and click ''Next''. If not, click ''Skip''. We will configure access to Eduroam later.
+
+\item[5. ] Choose your desired Internet browser in the next dialog and click ''Next''.
+
+\item[6. ] Click ''Skip'' when asked to update the software (we will do that later) and finally click ''Launch'' to finish the configuration.
+
+\end{itemize}
 
 \section{Connecting to Eduroam}
 
-If you are working at home and have managed to connect to a network you can skip this section and return to it when you want to connect you Raspberry Pi to Eduroam.
+If you are working at home and have managed to connect to a network you can skip this section for now and return to it when you want to connect your Raspberry Pi to Eduroam.
 
 \begin{enumerate}
-    \item[1.] Click on the network icon in the upper right corner of the screen. It will either look as a blue WiFi symbol or a symbol with two red crosses depending on your connection status. 
-    \item[2.] Choose eduroam in the menu that appears.
-    \item[3.] Fill out the form that appears according to figure \ref{fig:eduroam}.
+    \item[1.] Click on the network icon in the upper right corner of the screen. It will either look as a blue WiFi symbol or a symbol with two orange arrow halves crossed over in red depending on your connection status. Choose ''Turn On Wireless LAN'' if WiFi is not already enabled. 
+    \item[2.] Then choose ''eduroam'' in the menu that appears.
+    \item[3.] Fill out the form that appears according to Figure \ref{fig:eduroam}.
     \item[4.] Click Connect.
 \end{enumerate}
+Your Raspberry Pi should now connect to Eduroam and the network icon should now become blue.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=90mm]{eduroam.png}
-    \caption{How to enter your credentials into the new network manager}
+    \caption{How to enter your credentials into the network manager}
     \label{fig:eduroam}
 \end{figure}
 
@@ -239,19 +247,17 @@ If you are working at home and have managed to connect to a network you can skip
 \section{Understanding the packaging system}
 The operating system (OS) you are using does not update itself, like if you are using Windows, the computer sometimes download and installs updates on its own. The Raspberry Pi OS gives you more control over your computer as to how, what and when you want to expand and upgrade your OS.
 
-Software functionality is bundled in packages, and you can install the ones that are useful to you. A package handler makes it easy to update, install and remove packages. There are several such package handlers, such as \verb!apt!, \verb!apt-get! and \verb!apt-cache!, but they are all very similar in usage.
+Software functionality is bundled in packages, and you can install the ones that are useful to you. A package handler makes it easy to update, install, and remove packages. There are several such package handlers, such as \verb!apt!, \verb!apt-get! and \verb!apt-cache!, but they are all very similar in usage.
 
-Normally, you always update your OS before you install a new software/packages.\\
-%\newline
-Try it out! Open a terminal by clicking on the Terminal icon in the upper left corner. It should look like in \figref{terminal}.
+Normally, you always update your OS before you install new software/packages. Try it out! Open a terminal by clicking on the Terminal icon in the upper left corner. It should look like in \figref{terminal}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=100mm]{terminal.png}
     \caption{A terminal window}
     \label{fig:terminal}
 \end{figure}
-\newline
-You update the OS by writing command \eqref{eq:update} and pressing enter. The command tells the OS to download all the available updates to your computer. Please make sure that you are connected to the internet. You might get the question \texttt{Do you want to continue [Y/n]} if there is something to download. Type y or Y (short for yes) and press enter to continue, or n or N (short for no) to cancel.
+
+You update the OS by writing the command \eqref{eq:update} and pressing enter. The command tells the OS to download all available updates to your computer. Make sure that you are connected to the internet. You might get the question \texttt{Do you want to continue [Y/n]} if there is something to download. Type y or Y (short for yes) and press enter to continue, or n or N (short for no) to cancel.
 \begin{equation}
 \label{eq:update}
 \verb!sudo apt update!
@@ -280,60 +286,13 @@ Sometimes you need to reboot your Pi in order for the changes to kick in. Try co
     \label{fig:xkcd}
 \end{figure}
 
+\newpage
+
 \section{Task: write a shell script}
 \noindent Shell scripts are good for automating tasks by running several commands consecutively, in a sequence. Your next task is now to write a shell script that runs all of commands \eqref{eq:update} to \eqref{eq:reboot} consecutively in a sequence for a full OS update cycle. You will need to find out exactly how to do this on your own, but a good indication that you are on the right track is that the instructions you find explains what a \textit{shebang} is, and probably also mention the \verb!chmod! command. Name your shell script file \verb!update_os.sh!, and make sure that it works by executing (running) it.
 
 Using your new shell script knowledge, you can now both automate tasks and avoid retyping complicated commands.
 
-% \section{Install a new network manager}
-
-
-% When you boot into the Raspberry Pi your the first time, you may not able to connect to the university WiFi \emph{Eduroam}. This is due to the simple network managing service used by PiOS that cannot set up a complex enterprise wireless network like Eduroam. The simplest way to solve this is to install another network manager with the following steps:
-% \begin{itemize}
-
-%     \item[1.] Make sure you can access internet when you boot into your Raspberry Pi. Use your own WiFi at home or maybe start a hotspot from your phone.
-%     \item[2.] Open a terminal
-%     \item[3.] Use command \eqref{eq:update} and \eqref{eq:upgrade} that you just learned.
-%     \item[4.] Install the new network manager using command \eqref{eq:install}
-% \end{itemize}
-% \begin{equation}
-% \label{eq:install}
-% \verb!sudo apt-get install network-manager network-manager-gnome!
-% \end{equation}
-% \begin{itemize}
-%     \item[5.] Stop the old manager and start the new one by using command \eqref{eq:disable} and \eqref{eq:enable}
-% \end{itemize}
-% \begin{equation}
-% \label{eq:disable}
-% \verb!sudo systemctl disable --now dhcpcd!
-% \end{equation}
-% \begin{equation}
-% \label{eq:enable}
-% §\verb!sudo systemctl enable --now NetworkManager!
-% \end{equation}
-% \begin{itemize}
-%     \item[6.] Reboot the system. You should see another network manager icon in your menu bar and you can connect to Eduroam via it. Figure \ref{fig:eduroam} shows how to enter your username and password.
-% \end{itemize}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=100mm]{eduroam.png}
-%     \caption{How to enter your credentials into the new network manager}
-%     \label{fig:eduroam}
-% \end{figure}
-
-% {\bf Note: }\parbox[t]{14cm}{The time synchronization service on PiOS might also be poor. You may get problems to access internet if your system time is not correct. In case of problems you can set up your system time manually via command \eqref{eq:false}, \eqref{eq:settime} and \eqref{eq:true}}
-% \begin{equation}
-% \label{eq:false}
-% \verb!sudo timedatectl set-ntp false!
-% \end{equation}
-% \begin{equation}
-% \label{eq:settime}
-% \verb!sudo timedatectl set-time "Y-M-D HH:mm"!
-% \end{equation}
-% \begin{equation}
-% \label{eq:true}
-% \verb!sudo timedatectl set-ntp true!
-% \end{equation}
 
 \section{Lab Goal}
 {\textcolor{red}{You will need to show the TAs that your Pi was properly installed, updated and can connect to Eduroam.}}
@@ -343,20 +302,29 @@ Using your new shell script knowledge, you can now both automate tasks and avoid
 {\bf Hint 1: }\parbox[t]{14cm}{To avoid rewriting many commands in the terminal, you can use the keys \texttt{arrow up} and \texttt{arrow down} to go back and forth between the commands that you just wrote.}\\
 {\bf Hint 2: }\parbox[t]{14cm}{To paste commands into the terminal you can use \texttt{Ctrl + Shift + V}}\\
 {\bf Hint 3: }\parbox[t]{14cm}{Use \textit{Tab} to auto-complete the command in the terminal}\\
-{\bf Hint 4: }\parbox[t]{14cm}{To avoid rewriting many commands, it can be a good idea to write all steps in a batch-file or shell script. Then you can also reuse the batch file for the second project.}
-\vspace{1cm}
+{\bf Hint 4: }\parbox[t]{14cm}{To avoid rewriting many commands, it can be a good idea to write all steps in a batch file or shell script. Then you can also reuse the batch file for the second project.}
+\vspace{5mm}
 \begin{center}
 \huge Good luck!
 \end{center}
 
-\newpage
 
 \begin{thebibliography}{10}
 \bibliographystyle{plain}
-\bibitem{iso-date-time} ISO 8601 -- Date and Time Format, \url{https://www.iso.org/iso-8601-date-and-time-format.html}, last accessed on 2021-09-21.
-\bibitem{OS} Operating system, wikipedia, \url{https://en.wikipedia.org/wiki/Operating_system}, last accessed on 2021-09-15.
-\bibitem{sudo} Using Linux -- The sudo command, \url{https://www.raspberrypi.org/documentation/computers/using_linux.html}, last accessed on 2021-09-15.
-\bibitem{xkcd} XKCD -- Sandwich, \url{https://xkcd.com/149/}, last accessed on 2021-09-15.
+\bibitem{OS} Operating system, wikipedia, \url{https://en.wikipedia.org/wiki/Operating_system}, last accessed on 2025-10-28.
+\bibitem{sudo} Sudo, wikipedia, \url{https://en.wikipedia.org/wiki/Sudo}, last accessed on 2025-10-28.
+\bibitem{xkcd} XKCD -- Sandwich, \url{https://xkcd.com/149/}, last accessed on 2025-10-28.
 \end{thebibliography}
+
+\vspace{10mm}
+\hline
+\section*{A last important note: Backup your data!}
+It is strongly recommended that you backup your data on the SD card regularly. You will continously build on your previous work throughout the course so it is important you do not loose it. Device a backup strategy that suits you! Here are a couple of suggestions:
+
+\begin{itemize}
+    \item Use Git to store a copy of your work on GitHub or any other repository site in the cloud (as you learned in EDAB05 Programmering, Grundkurs). That way you can also easily move your work between the Raspberry and your other computers.
+    \item Get yourself a USB memory stick (at least the size of your SD card -- 16/32 GB) and regularly copy the contents of your SD card onto it. There is a very nifty utility preinstalled on your Raspberry for this: SD Card Copier. You find it by clicking on the raspberry icon in the upper left of the screen and looking under ''Accessories''. If your SD card should crash you can simply remove the SD card, insert your USB backup stick into your Raspberry, and boot from the USB stick! 
+\end{itemize}
+\hline
 
 \end{document}
